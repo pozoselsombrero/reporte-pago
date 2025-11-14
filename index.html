@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Pago</title>
+
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+    <div class="w-full mx-auto fade-in-page p-4 sm:p-8 bg-white">
+
+        <h1 class="text-3xl sm:text-4xl font-black mb-2 leading-tight text-center">
+            Reportar Pago Realizado
+        </h1>
+        <p class="text-base sm:text-lg mb-8 opacity-85 text-center max-w-xl mx-auto">
+            Por favor, completa los siguientes datos para procesar y verificar tu pago rápidamente.
+        </p>
+
+        <form 
+            action="https://formsubmit.co/miguelmpc1996@gmail.com" 
+            method="POST" 
+            enctype="multipart/form-data" 
+            class="space-y-6 max-w-2xl mx-auto"
+            id="payment-report-form"
+        >
+            
+            <p class="text-sm font-medium text-right mt-0">
+                Lo marcado con <span class="text-red-600">*</span> es obligatorio.
+            </p>
+
+            <input type="hidden" name="_subject" value="PAGO CLIENTE">
+            <input type="hidden" name="_cc" value="pozoselsombrero@gmail.com">
+            <input type="hidden" name="_next" value="URL_DE_REDIRECCION_AQUI">
+            
+            <div>
+                <label for="email" class="block text-lg font-bold mb-1">Correo Electrónico <span class="text-red-600">*</span></label>
+                <input 
+                    type="email" 
+                    name="email" 
+                    id="email" 
+                    placeholder="ejemplo@correo.com" 
+                    class="form-input-field"
+                    required
+                >
+            </div>
+
+            <div>
+                <label for="metodo_pago" class="block text-lg font-bold mb-1">Método de Pago <span class="text-red-600">*</span></label>
+                <select 
+                    name="metodo_pago" 
+                    id="metodo_pago" 
+                    class="form-input-field"
+                    required
+                >
+                    <option value="" disabled selected>Selecciona el método de pago utilizado</option>
+                    <option value="Paypal">PayPal</option>
+                    <option value="Facebank">FaceBank</option>
+                    <option value="Western_Union">Western Union</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="concepto" class="block text-lg font-bold mb-1">Concepto del Pago <span class="text-red-600">*</span></label>
+                <select 
+                    name="concepto_pago" 
+                    id="concepto" 
+                    class="form-input-field"
+                    required
+                >
+                    <option value="" disabled selected>¿Qué fue lo que pagaste?</option>
+                    <option value="Perforadora">Perforadora</option>
+                    <option value="Pieza">Pieza (Repuesto, Accesorio)</option>
+                    <option value="Curso">Curso "Kit del Fabricante Inteligente"</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="comprobante_id" class="block text-lg font-bold mb-1">Número de Comprobante / Referencia <span class="text-red-600">*</span></label>
+                <input 
+                    type="text" 
+                    name="comprobante_id" 
+                    id="comprobante_id" 
+                    placeholder="E.g., ID de Transacción de PayPal, número de Referencia, etc." 
+                    class="form-input-field"
+                    required
+                >
+                <p class="text-sm mt-1 opacity-75 italic">
+                    *Nota Importante* Envía el ID de transacción completo para PayPal, el número de referencia para FaceBank o el MTCN/número de control para Western Union.
+                </p>
+            </div>
+
+            <div>
+                <label for="comprobante_archivo" class="block text-lg font-bold mb-1">Adjuntar Comprobante <span class="text-red-600">*</span></label>
+                <input 
+                    type="file" 
+                    name="upload" 
+                    id="comprobante_archivo" 
+                    accept="image/*, .pdf"
+                    class="form-input-field p-2"
+                    required
+                >
+                <p class="text-sm mt-1 opacity-75 italic">
+                    Recuerda: No importa si es foto o captura, lo fundamental es que se vea *claro y legible*.
+                </p>
+            </div>
+
+            <div>
+                <label for="nota_adicional" class="block text-lg font-bold mb-1">Nota Adicional (Opcional)</label>
+                <textarea 
+                    name="nota_adicional" 
+                    id="nota_adicional" 
+                    rows="4" 
+                    placeholder="Cualquier información extra que deba saber sobre el pago o pedido." 
+                    class="form-input-field"
+                ></textarea>
+            </div>
+
+            <button 
+                type="submit" 
+                class="btn-primary text-white py-3 px-8 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-50"
+            >
+                Enviar Reporte de Pago
+            </button>
+
+        </form>
+
+    </div>
+
+    <script src="main.js"></script>
+
+</body>
+</html>

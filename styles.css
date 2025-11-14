@@ -1,0 +1,82 @@
+/* Variables CSS para colores */
+:root {
+    --text-color: #333333;
+    --button-color: #0474b4; /* Azul Primario */
+    --input-border-color: #d1d5db; /* Gris de borde */
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    /* Aplicamos un padding vertical generoso y un pequeño padding horizontal para el "margen" */
+    padding: 2.5rem 1rem 5rem 1rem; /* pt-10, px-4, pb-20 */
+    overflow-x: hidden;
+}
+
+/* En pantallas grandes, permitimos que el body centre el contenido pero el padding se ajusta */
+@media (min-width: 640px) {
+    body {
+        padding: 5rem 1rem 8rem 1rem; /* pt-20, px-4, pb-32 */
+    }
+}
+
+/* Animación de desvanecido para toda la página (AJUSTADA A 0.9s) */
+.fade-in-page {
+    animation: fadeIn 0.9s ease-out forwards;
+    opacity: 0;
+}
+
+/* Estilo para el botón primario */
+.btn-primary {
+    background-color: var(--button-color);
+    color: white;
+    border-radius: 0;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid var(--button-color);
+    font-weight: 900;
+    width: 100%; /* El botón ocupa todo el ancho dentro del formulario */
+    text-transform: uppercase;
+}
+
+/* Efecto hover para el botón primario */
+.btn-primary:hover {
+    background-color: white;
+    color: var(--button-color);
+    border-color: var(--button-color);
+}
+
+/* Estilo general para campos de formulario para alinearse con la estética */
+.form-input-field {
+    border: 1px solid var(--input-border-color);
+    padding: 0.75rem;
+    width: 100%;
+    font-size: 1rem;
+    color: var(--text-color);
+    box-shadow: none;
+    transition: border-color 0.3s;
+    /* Eliminamos bordes redondeados para mantener el estilo cuadrado del diseño original */
+    border-radius: 0;
+}
+
+.form-input-field:focus {
+    outline: none;
+    border-color: var(--button-color);
+    box-shadow: 0 0 0 1px var(--button-color);
+}
+
+/* Keyframes para la animación de desvanecido */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
